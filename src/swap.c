@@ -22,7 +22,7 @@ static void	swap(t_stack *stack)
 *	Swaps the top 2 elements of stack a.
 *	Prints "sa" to the standard output.
 */
-void	do_sa(t_stack **stack_a)
+void	swap_a(t_stack **stack_a)
 {
 	swap(*stack_a);
 	ft_putstr("sa\n");
@@ -32,7 +32,7 @@ void	do_sa(t_stack **stack_a)
 *	Swaps the top 2 elements of stack b.
 *	Prints "sb" to the standard output.
 */
-void	do_sb(t_stack **stack_b)
+void	swap_b(t_stack **stack_b)
 {
 	swap(*stack_b);
 	ft_putstr("sb\n");
@@ -43,7 +43,7 @@ void	do_sb(t_stack **stack_b)
 *	of stack b.
 *	Prints "ss" to the standard output.
 */
-void	do_ss(t_stack **stack_a, t_stack **stack_b)
+void	swap_both(t_stack **stack_a, t_stack **stack_b)
 {
 	swap(*stack_a);
 	swap(*stack_b);

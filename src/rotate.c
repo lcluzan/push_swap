@@ -19,7 +19,7 @@ static void	rotate(t_stack **stack)
 *	Sends the top element of stack a to the bottom.
 *	Prints "ra" to the standard output.
 */
-void	do_ra(t_stack **stack_a)
+void	rotate_a(t_stack **stack_a)
 {
 	rotate(stack_a);
 	ft_putstr("ra\n");
@@ -29,7 +29,7 @@ void	do_ra(t_stack **stack_a)
 *	Sends the top element of stack b to the bottom.
 *	Prints "rb" to the standard output.
 */
-void	do_rb(t_stack **stack_b)
+void	rotate_b(t_stack **stack_b)
 {
 	rotate(stack_b);
 	ft_putstr("rb\n");
@@ -40,7 +40,7 @@ void	do_rb(t_stack **stack_b)
 *	of their respective stacks.
 *	Prints "rr" to the standard output.
 */
-void	do_rr(t_stack **stack_a, t_stack **stack_b)
+void	rotate_both(t_stack **stack_a, t_stack **stack_b)
 {
 	rotate(stack_a);
 	rotate(stack_b);

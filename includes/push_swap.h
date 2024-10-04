@@ -45,18 +45,17 @@ void		do_move(t_stack **a, t_stack **b, int cost_a, int cost_b);
 
 /* Operations */
 
-void		do_pa(t_stack **stack_a, t_stack **stack_b);
-void		do_pb(t_stack **stack_a, t_stack **stack_b);
-void		do_sa(t_stack **stack_a);
-void		do_sb(t_stack **stack_b);
-void		do_ss(t_stack **stack_a, t_stack **stack_b);
-void		do_ra(t_stack **stack_a);
-void		do_rb(t_stack **stack_b);
-void		do_rr(t_stack **stack_a, t_stack **stack_b);
-void		do_rrr(t_stack **stack_a, t_stack **stack_b);
-void		do_rra(t_stack **stack_a);
-void		do_rrb(t_stack **stack_b);
-
+void		push_a(t_stack **stack_a, t_stack **stack_b);
+void		push_b(t_stack **stack_a, t_stack **stack_b);
+void		swap_a(t_stack **stack_a);
+void		swap_b(t_stack **stack_b);
+void		swap_both(t_stack **stack_a, t_stack **stack_b);
+void		rotate_a(t_stack **stack_a);
+void		rotate_b(t_stack **stack_b);
+void		rotate_both(t_stack **stack_a, t_stack **stack_b);
+void		rev_rotate_a(t_stack **stack_a);
+void		rev_rotate_b(t_stack **stack_b);
+void		rev_rotate_both(t_stack **stack_a, t_stack **stack_b);
 /* Stack Functions */
 
 t_stack		*get_stack_bottom(t_stack *stack);

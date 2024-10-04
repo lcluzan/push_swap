@@ -19,7 +19,7 @@ static void	push(t_stack **src, t_stack **dest)
 *	Pushes the top element of stack b to the top of stack a.
 *	Prints "pa" to the standard output.
 */
-void	do_pa(t_stack **stack_a, t_stack **stack_b)
+void	push_a(t_stack **stack_a, t_stack **stack_b)
 {
 	push(stack_b, stack_a);
 	ft_putstr("pa\n");
@@ -29,7 +29,7 @@ void	do_pa(t_stack **stack_a, t_stack **stack_b)
 *	Pushes the top element of stack a to the top of stack b.
 *	Prints "pb" to the standard output.
 */
-void	do_pb(t_stack **stack_a, t_stack **stack_b)
+void	push_b(t_stack **stack_a, t_stack **stack_b)
 {
 	push(stack_a, stack_b);
 	ft_putstr("pb\n");

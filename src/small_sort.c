@@ -38,9 +38,9 @@ void	small_sort(t_stack **stack)
 		return ;
 	highest = find_highest_index(*stack);
 	if ((*stack)->index == highest)
-		do_ra(stack);
+		rotate_a(stack);
 	else if ((*stack)->next->index == highest)
-		do_rra(stack);
+		rev_rotate_a(stack);
 	if ((*stack)->index > (*stack)->next->index)
-		do_sa(stack);
+		swap_a(stack);
 }
