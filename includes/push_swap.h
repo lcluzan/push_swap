@@ -56,6 +56,7 @@ void		rotate_both(t_stack **stack_a, t_stack **stack_b);
 void		rev_rotate_a(t_stack **stack_a);
 void		rev_rotate_b(t_stack **stack_b);
 void		rev_rotate_both(t_stack **stack_a, t_stack **stack_b);
+
 /* Stack Functions */
 
 t_stack		*get_stack_bottom(t_stack *stack);
