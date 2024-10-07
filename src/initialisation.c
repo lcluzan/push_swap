@@ -33,19 +33,19 @@ t_stack	*fill_stack_values(int ac, char **av)
 *	which may or may not be adjacent to each other.
 *		ex. values:		-3	 0	 9	 2
 *		indexes:		[1]	[2]	[4]	[3]
-*	The indexes are assigned from highest (stack_size) to lowest (1).
+*	The indexes are assigned from bigger (stack_size) to smaller (1).
 */
 void	assign_index(t_stack *stack_a, int stack_size)
 {
 	t_stack	*ptr;
-	t_stack	*highest;
+	t_stack	*bigger;
 	int		value;
 
 	while (--stack_size > 0)
 	{
 		ptr = stack_a;
 		value = INT_MIN;
-		highest = NULL;
+		bigger = NULL;
 		while (ptr)
 		{
 			if (ptr->value == INT_MIN && ptr->index == 0)
@@ -53,13 +53,13 @@ void	assign_index(t_stack *stack_a, int stack_size)
 			if (ptr->value > value && ptr->index == 0)
 			{
 				value = ptr->value;
-				highest = ptr;
+				bigger = ptr;
 				ptr = stack_a;
 			}
 			else
 				ptr = ptr->next;
 		}
-		if (highest != NULL)
-			highest->index = stack_size;
+		if (bigger != NULL)
+			bigger->index = stack_size;
 	}
 }
