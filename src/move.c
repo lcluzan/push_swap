@@ -7,8 +7,8 @@
 *	rotated, when one reaches 0, the stack has been rotated as far as possible
 *	and the top position is correct.
 */
-static void	do_rev_rotate_both(t_stack **a, t_stack **b,
-												int *cost_a, int *cost_b)
+static void	do_rev_rotate_both(t_stack **a, t_stack **b, int *cost_a,
+	int *cost_b)
 {
 	while (*cost_a < 0 && *cost_b < 0)
 	{
