@@ -15,7 +15,7 @@ static void	rotate(t_stack **stack)
 	tail->next = tmp;
 }
 
-/* do_ra:
+/* rotate_a:
 *	Sends the top element of stack a to the bottom.
 *	Prints "ra" to the standard output.
 */
@@ -25,7 +25,7 @@ void	rotate_a(t_stack **stack_a)
 	ft_putstr("ra\n");
 }
 
-/* do_rb:
+/* rotate_b:
 *	Sends the top element of stack b to the bottom.
 *	Prints "rb" to the standard output.
 */
@@ -35,7 +35,7 @@ void	rotate_b(t_stack **stack_b)
 	ft_putstr("rb\n");
 }
 
-/* do_rr:
+/* rotate_both:
 *	Sends the top element of both stack a and stack b to the bottom
 *	of their respective stacks.
 *	Prints "rr" to the standard output.

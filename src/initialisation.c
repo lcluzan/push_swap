@@ -2,7 +2,7 @@
 
 /* fill_stack_values:
 *	Fills stack_a with the provided values.
-*	If the values are out of integer range, prints and error and exits the program.
+*If the values are out of integer range, prints and error and exits the program.
 */
 t_stack	*fill_stack_values(int ac, char **av)
 {
@@ -29,7 +29,7 @@ t_stack	*fill_stack_values(int ac, char **av)
 
 /* assign_index:
 *	Assigns an index to each value in stack a. This is a convenient way to order
-*	the stack because indexes can be checked and compared instead of actual values,
+*the stack because indexes can be checked and compared instead of actual values,
 *	which may or may not be adjacent to each other.
 *		ex. values:		-3	 0	 9	 2
 *		indexes:		[1]	[2]	[4]	[3]
