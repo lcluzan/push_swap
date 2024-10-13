@@ -6,15 +6,13 @@
 /*   By: lcluzan <lcluzan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 14:54:06 by lcluzan           #+#    #+#             */
-/*   Updated: 2024/10/13 14:54:07 by lcluzan          ###   ########.fr       */
+/*   Updated: 2024/10/13 15:33:54 by lcluzan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/* push:
-*	Pushes the top element of src stack to the top of dest stack.
-*/
+//Moves the top element from src stack to dest stack
 static void	push(t_stack **src, t_stack **dest)
 {
 	t_stack	*tmp;
@@ -27,20 +25,14 @@ static void	push(t_stack **src, t_stack **dest)
 	*src = tmp;
 }
 
-/* do_pa:
-*	Pushes the top element of stack b to the top of stack a.
-*	Prints "pa" to the standard output.
-*/
+// Moves the top element from stack b to stack a and prints "pa"
 void	push_a(t_stack **stack_a, t_stack **stack_b)
 {
 	push(stack_b, stack_a);
 	ft_putstr("pa\n");
 }
 
-/* do_pb:
-*	Pushes the top element of stack a to the top of stack b.
-*	Prints "pb" to the standard output.
-*/
+//Moves the top element from stack a to stack b and prints "pb"
 void	push_b(t_stack **stack_a, t_stack **stack_b)
 {
 	push(stack_a, stack_b);

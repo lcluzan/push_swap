@@ -6,15 +6,13 @@
 /*   By: lcluzan <lcluzan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 14:55:04 by lcluzan           #+#    #+#             */
-/*   Updated: 2024/10/13 14:55:05 by lcluzan          ###   ########.fr       */
+/*   Updated: 2024/10/13 15:48:20 by lcluzan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/* free_stack:
-*	Frees each element in a given stack and sets the stack pointer to NULL.
-*/
+//Frees all stack elements and sets the stack pointer to NULL
 void	free_stack(t_stack **stack)
 {
 	t_stack	*tmp;
@@ -30,10 +28,7 @@ void	free_stack(t_stack **stack)
 	*stack = NULL;
 }
 
-/* exit_error:
-*   Writes "Error\n" to the standard output after freeing stack a and b.
-*	Exits with standard error code 1.
-*/
+//Prints "Error\n", frees stacks a and b, and exits with code 1
 void	exit_error(t_stack **stack_a, t_stack **stack_b)
 {
 	if (stack_a == NULL || *stack_a != NULL)
@@ -44,9 +39,6 @@ void	exit_error(t_stack **stack_a, t_stack **stack_b)
 	exit (1);
 }
 
-/* ft_atoi:
-*   Converts an alphanumeric string of characters into a long integer.
-*/
 long int	ft_atoi(const char *str)
 {
 	long int	nb;
@@ -71,9 +63,6 @@ long int	ft_atoi(const char *str)
 	return (nb * isneg);
 }
 
-/* ft_putstr:
-*	Prints a given string of characters to the standard output.
-*/
 void	ft_putstr(char *str)
 {
 	int	i;
@@ -87,10 +76,8 @@ void	ft_putstr(char *str)
 }
 
 /* nb_abs:
-*	Returns the absolute value of a given number.
-*	The absolute value of a number is used to measure the distance of that
-*	number from 0, whether it is positive or negative (abs value of -6 is 6).
-*/
+ * Returns the absolute value of a number, which measures its distance from 0
+ (e.g., abs(-6) is 6)*/
 int	nb_abs(int nb)
 {
 	if (nb < 0)

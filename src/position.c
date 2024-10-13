@@ -6,25 +6,21 @@
 /*   By: lcluzan <lcluzan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 14:54:00 by lcluzan           #+#    #+#             */
-/*   Updated: 2024/10/13 14:54:01 by lcluzan          ###   ########.fr       */
+/*   Updated: 2024/10/13 15:32:03 by lcluzan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/* get_position:
-*	Assigns a position to each element of a stack from top to bottom
-*	in ascending order.
-*	Example stack:
-*		value:		 3	 0	 9	 1
-*		index:		[3]	[1]	[4]	[2]
-*		position:	<0>	<1>	<2>	<3>
-*	This is used to calculate the cost of moving a certain number to
-*	a certain position. If the above example is stack b, it would cost
-*	nothing (0) to push the first element to stack a. However if we want to
-*	push the highest value, 9, which is in third position, it would cost 2 extra
-*	moves to bring that 9 to the top of b before pushing it to stack a.
-*/
+/*Assigns positions to stack elements from top to bottom in ascending order.
+Example stack:
+value:		 3	 0	 9	 1
+index:		[3]	[1]	[4]	[2]
+position:	<0>	<1>	<2>	<3>
+Calculates the cost of moving elements to a position. For example,
+in stack b, moving the first element to stack a costs 0. However,
+moving the highest value, 9 (third position), costs 2 extra moves
+to bring it to the top before pushing it to stack a*/
 static void	get_position(t_stack **stack)
 {
 	t_stack	*tmp;
@@ -40,10 +36,7 @@ static void	get_position(t_stack **stack)
 	}
 }
 
-/* get_lowest_index_position:
-*	Gets the current position of the element with the lowest index
-*	within a stack.
-*/
+//Returns the index of the lowest element in the stack.
 int	get_lowest_index_position(t_stack **stack)
 {
 	t_stack	*tmp;
@@ -66,35 +59,18 @@ int	get_lowest_index_position(t_stack **stack)
 	return (lowest_pos);
 }
 
-/* get_target:
-*	Picks the best target position in stack A for the given index of
-*	an element in stack B. First checks if the index of the B element can
-*	be placed somewhere in between elements in stack A, by checking whether
-*	there is an element in stack A with a bigger index. If not, it finds the
-*	element with the smallest index in A and assigns that as the target position.
-*	--- Example:
-*		target_pos starts at INT_MAX
-*		B index: 3
-*		A contains indexes: 9 4 2 1 0
-*		9 > 3 && 9 < INT_MAX 	: target_pos updated to 9
-*		4 > 3 && 4 < 9 			: target pos updated to 4
-*		2 < 3 && 2 < 4			: no update!
-*	So target_pos needs to be the position of index 4, since it is
-*	the closest index.
-*	--- Example:
-*		target_pos starts at INT_MAX
-*		B index: 20
-*		A contains indexes: 16 4 3
-*		16 < 20					: no update! target_pos = INT_MAX
-*		4  < 20					: no update! target_pos = INT_MAX
-*		3  < 20					: no update! target_pos = INT_MAX
-*	... target_pos stays at INT MAX, need to switch strategies.
-*		16 < 20					: target_pos updated to 20
-*		4  < 20					: target_pos updated to 4
-*		3  < 20					: target_pos updated to 3
-*	So target_pos needs to be the position of index 3, since that is
-*	the "end" of the stack.
-*/
+/*Determines the best target position in stack A for an index from stack B.
+It first checks if the B index can fit between elements in A by finding
+an element in A with a greater index. If none exists, it assigns the
+smallest index in A as the target.
+Example 1:
+B index: 3
+A indexes: 9, 4, 2, 1, 0
+target_pos starts at INT_MAX
+9 > 3: target_pos = 9
+4 > 3: target_pos = 4
+2 < 3: no update
+target_pos = 4 (closest index).*/
 static int	get_target(t_stack **a, int b_idx,
 								int target_idx, int target_pos)
 {
@@ -125,13 +101,10 @@ static int	get_target(t_stack **a, int b_idx,
 	return (target_pos);
 }
 
-/* get_target_position:
-*	Assigns a target position in stack A to each element of stack A.
-*	The target position is the spot the element in B needs to
-*	get to in order to be sorted correctly. This position will
-*	be used to calculate the cost of moving each element to
-*	its target position in stack A.
-*/
+/*Assigns each element in stack A a target position for correct sorting
+in stack B.
+This position helps calculate the cost of moving elements to their target
+in stack A*/
 void	get_target_position(t_stack **a, t_stack **b)
 {
 	t_stack	*tmp_b;

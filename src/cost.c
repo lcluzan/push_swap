@@ -6,21 +6,17 @@
 /*   By: lcluzan <lcluzan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 14:53:31 by lcluzan           #+#    #+#             */
-/*   Updated: 2024/10/13 14:53:32 by lcluzan          ###   ########.fr       */
+/*   Updated: 2024/10/13 15:18:54 by lcluzan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/* get_cost:
-*	Calculates the cost of moving each element of stack B into the correct
-*	position in stack A.
-*	Two costs are calculated:
-*	cost_b represents the cost of getting the element to the top of the B stack
-*		cost_a represents the cost of getting to the right position in stack A.
-*	If the element is in the bottom half of the stack, the cost will be negative,
-*	if it is in the top half, the cost is positive.
-*/
+/*Calculates the cost of moving an element from stack B to its correct
+position in stack A.
+cost_b: cost to bring the element to the top of stack B.
+cost_a: cost to place it in stack A.
+Negative cost for the bottom half, positive for the top half.*/
 void	get_cost(t_stack **stack_a, t_stack **stack_b)
 {
 	t_stack	*tmp_a;
@@ -44,10 +40,8 @@ void	get_cost(t_stack **stack_a, t_stack **stack_b)
 	}
 }
 
-/* do_cheapest_move:
-*	Finds the element in stack B with the cheapest cost to move to stack A
-*	and moves it to the correct position in stack A.
-*/
+/*	Finds and moves the lowest-cost element from stack B to its correct position
+in stack A.*/
 void	do_cheapest_move(t_stack **stack_a, t_stack **stack_b)
 {
 	t_stack	*tmp;

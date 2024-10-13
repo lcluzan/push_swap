@@ -6,16 +6,13 @@
 /*   By: lcluzan <lcluzan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 14:53:45 by lcluzan           #+#    #+#             */
-/*   Updated: 2024/10/13 14:53:46 by lcluzan          ###   ########.fr       */
+/*   Updated: 2024/10/13 15:25:15 by lcluzan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/* is_sorted:
-*	Checks if a stack is sorted.
-*	Returns 0 if the stack is not sorted, 1 if it is sorted.
-*/
+//Checks if a stack is sorted.Returns 1 if sorted, 0 otherwise.
 int	is_sorted(t_stack *stack)
 {
 	while (stack->next != NULL)
@@ -27,10 +24,7 @@ int	is_sorted(t_stack *stack)
 	return (1);
 }
 
-/* push_swap:
-*	Chooses a sorting method depending on the number
-*	of values to be sorted.
-*/
+//Selects a sorting method based on the number of values
 static void	push_swap(t_stack **stack_a, t_stack **stack_b, int stack_size)
 {
 	if (stack_size == 2 && !is_sorted(*stack_a))
@@ -41,11 +35,8 @@ static void	push_swap(t_stack **stack_a, t_stack **stack_b, int stack_size)
 		sort(stack_a, stack_b);
 }
 
-/* main:
-*	Checks if the input is correct, in which case it initializes stacks a and b,
-*	assigns each value indexes and sorts the stacks. When sorting is done, frees
-*	the stacks and exits.
-*/
+/*Validates input, initializes and sorts stacks a and b, assigns indexes,
+then frees the stacks and exits*/
 int	main(int ac, char **av)
 {
 	t_stack	*stack_a;

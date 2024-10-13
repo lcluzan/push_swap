@@ -6,16 +6,14 @@
 /*   By: lcluzan <lcluzan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 14:53:41 by lcluzan           #+#    #+#             */
-/*   Updated: 2024/10/13 14:53:42 by lcluzan          ###   ########.fr       */
+/*   Updated: 2024/10/13 15:23:20 by lcluzan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/* arg_is_number:
-*   Checks if the argument is a number. +1 1 and -1 are all valid numbers.
-*   Return: 1 if the argument is a number, 0 if not.
-*/
+/*Checks if the argument is a valid number (+1, 1, -1).
+Return: 1 if valid, 0 otherwise*/
 static int	arg_is_number(char *av)
 {
 	int	i;
@@ -32,10 +30,8 @@ static int	arg_is_number(char *av)
 	return (1);
 }
 
-/* have_duplicates:
-*   Checks if the argument list has duplicate numbers.
-*   Return: 1 if a duplicate is found, 0 if there are none.
-*/
+/*Checks for duplicate numbers in the list.
+Returns: 1 if duplicates exist, 0 otherwise*/
 static int	have_duplicates(char **av)
 {
 	int	i;
@@ -56,12 +52,8 @@ static int	have_duplicates(char **av)
 	return (0);
 }
 
-/* arg_is_zero:
-*   Checks the argument is a 0 to avoid 0 +0 -0 duplicates
-*	and 0 0000 +000 -00000000 too.
-*   Return: 1 if the argument is a zero, 0 if it contains
-*	anything else than a zero.
-*/
+/*Checks if the argument is a zero (handles 0, +0, -0, 000, etc.).
+ Returns: 1 if zero, 0 otherwise*/
 static int	arg_is_zero(char *av)
 {
 	int	i;
@@ -76,10 +68,8 @@ static int	arg_is_zero(char *av)
 	return (1);
 }
 
-/* is_correct_input:
-*   Checks if the given arguments are all numbers, without duplicates.
-*   Return: 1 if the arguments are valid, 0 if not.
-*/
+/*Verifies if all arguments are unique numbers.
+Return: 1 if valid, 0 otherwise*/
 int	is_correct_input(char **av)
 {
 	int	i;

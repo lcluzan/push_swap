@@ -6,15 +6,13 @@
 /*   By: lcluzan <lcluzan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 14:54:25 by lcluzan           #+#    #+#             */
-/*   Updated: 2024/10/13 14:54:26 by lcluzan          ###   ########.fr       */
+/*   Updated: 2024/10/13 15:39:44 by lcluzan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/* find_highest_index:
-*	Returns the highest index in a stack.
-*/
+//Returns the highest index in the stack
 static int	find_highest_index(t_stack *stack)
 {
 	int		index;
@@ -29,19 +27,13 @@ static int	find_highest_index(t_stack *stack)
 	return (index);
 }
 
-/* small_sort:
-*	Sorts a stack of 3 numbers in 2 or fewer moves. The sorting is done by index
-*	rather than value. Example:
-*		values:		 0	 9	 2
-*		indexes:	[1]	[3]	[2]
-*	Solution, 2 moves:
-*	rra:
-*		values:		 2	 0	 9
-*		indexes:	[2]	[1]	[3]
-*	sa:
-*		values:		 0	 2	 9
-*		indexes:	[1]	[2]	[3]
-*/
+/*Sorts a stack of 3 numbers using 2 or fewer moves based on their indexes.
+Example:
+Values:         0   9   2
+Indexes:      [1] [3] [2]
+Solution in 2 moves:
+rra:         2   0   9   -> [2] [1] [3]
+sa:         0   2   9   -> [1] [2] [3]*/
 void	small_sort(t_stack **stack)
 {
 	int		highest;

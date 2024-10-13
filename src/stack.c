@@ -6,15 +6,13 @@
 /*   By: lcluzan <lcluzan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 14:54:40 by lcluzan           #+#    #+#             */
-/*   Updated: 2024/10/13 14:54:42 by lcluzan          ###   ########.fr       */
+/*   Updated: 2024/10/13 15:43:57 by lcluzan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/* get_stack_bottom:
-*	Returns the last element of the stack.
-*/
+//Returns the last stack element
 t_stack	*get_stack_bottom(t_stack *stack)
 {
 	while (stack && stack->next != NULL)
@@ -22,9 +20,7 @@ t_stack	*get_stack_bottom(t_stack *stack)
 	return (stack);
 }
 
-/* get_stack_before_bottom:
-*	Returns the second to last element of the stack.
-*/
+//Returns the second-to-last stack element
 t_stack	*get_stack_before_bottom(t_stack *stack)
 {
 	while (stack && stack->next && stack->next->next != NULL)
@@ -32,10 +28,7 @@ t_stack	*get_stack_before_bottom(t_stack *stack)
 	return (stack);
 }
 
-/* stack_new:
-*	Creates a stack elements with the provided value.
-*	Returns the newly created stack element.
-*/
+//Creates and returns a new stack element with the given value
 t_stack	*stack_new(int value)
 {
 	t_stack	*new;
@@ -53,9 +46,7 @@ t_stack	*stack_new(int value)
 	return (new);
 }
 
-/* add_stack_bottom:
-*	Adds an element to the bottom of a stack.
-*/
+//Adds an element to the bottom of a stack
 void	stack_add_bottom(t_stack **stack, t_stack *new)
 {
 	t_stack	*tail;
@@ -71,9 +62,7 @@ void	stack_add_bottom(t_stack **stack, t_stack *new)
 	tail->next = new;
 }
 
-/* get_stack_size:
-*	Returns the number of elements in a stack.
-*/
+//Returns the stack element count
 int	get_stack_size(t_stack	*stack)
 {
 	int	size;

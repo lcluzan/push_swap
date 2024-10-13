@@ -6,16 +6,13 @@
 /*   By: lcluzan <lcluzan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 14:53:36 by lcluzan           #+#    #+#             */
-/*   Updated: 2024/10/13 14:53:37 by lcluzan          ###   ########.fr       */
+/*   Updated: 2024/10/13 15:20:44 by lcluzan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/* fill_stack_values:
-*	Fills stack_a with the provided values.
-*If the values are out of integer range, prints and error and exits the program.
-*/
+/* Fills stack_a with values. Exits with an error if values are out of range*/
 t_stack	*fill_stack_values(int ac, char **av)
 {
 	t_stack		*stack_a;
@@ -39,14 +36,11 @@ t_stack	*fill_stack_values(int ac, char **av)
 	return (stack_a);
 }
 
-/* assign_index:
-*	Assigns an index to each value in stack a. This is a convenient way to order
-*the stack because indexes can be checked and compared instead of actual values,
-*	which may or may not be adjacent to each other.
-*		ex. values:		-3	 0	 9	 2
-*		indexes:		[1]	[2]	[4]	[3]
-*	The indexes are assigned from bigger (stack_size) to smaller (1).
-*/
+/* Assigns an index to each value in stack a, allowing comparison using indexes
+ instead of values, which may not be adjacent.
+     ex. values:   -3   0   9   2
+         indexes:  [1] [2] [4] [3]
+Indexes range from stack_size (largest) to 1 (smallest)*/
 void	assign_index(t_stack *stack_a, int stack_size)
 {
 	t_stack	*ptr;

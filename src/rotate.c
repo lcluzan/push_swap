@@ -6,15 +6,13 @@
 /*   By: lcluzan <lcluzan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 14:54:18 by lcluzan           #+#    #+#             */
-/*   Updated: 2024/10/13 14:54:19 by lcluzan          ###   ########.fr       */
+/*   Updated: 2024/10/13 15:38:30 by lcluzan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/* rotate:
-*	The top element of the stack is sent to the bottom.
-*/
+//Moves the top stack element to the bottom
 static void	rotate(t_stack **stack)
 {
 	t_stack	*tmp;
@@ -27,31 +25,22 @@ static void	rotate(t_stack **stack)
 	tail->next = tmp;
 }
 
-/* rotate_a:
-*	Sends the top element of stack a to the bottom.
-*	Prints "ra" to the standard output.
-*/
+// Moves the top element of stack a to the bottom and prints "ra"
 void	rotate_a(t_stack **stack_a)
 {
 	rotate(stack_a);
 	ft_putstr("ra\n");
 }
 
-/* rotate_b:
-*	Sends the top element of stack b to the bottom.
-*	Prints "rb" to the standard output.
-*/
+//Moves the top element of stack b to the bottom and prints "rb"
 void	rotate_b(t_stack **stack_b)
 {
 	rotate(stack_b);
 	ft_putstr("rb\n");
 }
 
-/* rotate_both:
-*	Sends the top element of both stack a and stack b to the bottom
-*	of their respective stacks.
-*	Prints "rr" to the standard output.
-*/
+/*Moves the top elements of stacks a and b to their bottoms.
+Prints "rr" to standard output*/
 void	rotate_both(t_stack **stack_a, t_stack **stack_b)
 {
 	rotate(stack_a);
