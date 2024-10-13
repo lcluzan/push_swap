@@ -44,4 +44,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re test2 test3 test5 test100 test500 test1000
+.PHONY: all clean fclean re
