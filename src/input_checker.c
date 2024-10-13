@@ -9,6 +9,8 @@ static int	arg_is_number(char *av)
 	int	i;
 
 	i = 0;
+	if (!av[0])
+		return (0);
 	if (is_sign(av[i]) && av[i + 1] != '\0')
 		i++;
 	while (av[i] && is_digit(av[i]))
