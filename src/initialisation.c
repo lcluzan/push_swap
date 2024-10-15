@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   initialisation.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lcluzan <lcluzan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nouillebobby <nouillebobby@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 14:53:36 by lcluzan           #+#    #+#             */
-/*   Updated: 2024/10/13 15:20:44 by lcluzan          ###   ########.fr       */
+/*   Updated: 2024/10/15 10:04:06 by nouillebobb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,6 @@ t_stack	*fill_stack_values(int ac, char **av)
 	while (i < ac)
 	{
 		nb = ft_atoi(av[i]);
-		if (nb > INT_MAX || nb < INT_MIN)
-			exit_error(&stack_a, NULL);
 		if (i == 1)
 			stack_a = stack_new((int)nb);
 		else
