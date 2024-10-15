@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   input_checker.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nouillebobby <nouillebobby@student.42.f    +#+  +:+       +#+        */
+/*   By: lcluzan <lcluzan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 14:53:41 by lcluzan           #+#    #+#             */
-/*   Updated: 2024/10/15 10:05:34 by nouillebobb      ###   ########.fr       */
+/*   Updated: 2024/10/15 13:13:33 by lcluzan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,30 @@ static int	arg_is_number(char *av)
 
 static int	arg_is_int(char *av)
 {
-	
+	int			i;
+	long long	num;
+	int			sign;
+
+	i = 0;
+	num = 0;
+	sign = 1;
+	if (!av[0])
+		return (0);
+	if (is_sign(av[i]) && av[i + 1] != '\0')
+	{
+		if (av[i] == '-')
+			sign = -1;
+		i++;
+	}
+	while (av[i] && is_digit(av[i]))
+	{
+		num = num * 10 + (av[i] - '0');
+		if ((sign == 1 && num > INT_MAX)
+			|| (sign == -1 && num > -(long long)INT_MIN))
+			return (0);
+		i++;
+	}
+	return (av[i] == '\0');
 }
 
 /*Checks for duplicate numbers in the list.
