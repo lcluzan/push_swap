@@ -6,7 +6,7 @@
 /*   By: lcluzan <lcluzan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 14:53:41 by lcluzan           #+#    #+#             */
-/*   Updated: 2024/10/17 13:07:59 by lcluzan          ###   ########.fr       */
+/*   Updated: 2024/10/17 13:08:39 by lcluzan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ static int	arg_is_number(char *av)
 		return (0);
 	return (1);
 }
+
 /*Checks if the argument is INT_MIN or INT_MAX.
 Return: 1 if INT_MIN or INT_MAX, 0 otherwise*/
 static int	arg_is_int(char *av)
