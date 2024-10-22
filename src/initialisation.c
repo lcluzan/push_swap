@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   initialisation.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nouillebobby <nouillebobby@student.42.f    +#+  +:+       +#+        */
+/*   By: lcluzan <lcluzan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 14:53:36 by lcluzan           #+#    #+#             */
-/*   Updated: 2024/10/15 10:04:06 by nouillebobb      ###   ########.fr       */
+/*   Updated: 2024/10/22 14:16:19 by lcluzan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /* Fills stack_a with values. Exits with an error if values are out of range*/
-t_stack	*fill_stack_values(int ac, char **av)
+t_stack	*fill_stack_values(char **av)
 {
 	t_stack		*stack_a;
 	long int	nb;
@@ -21,8 +21,8 @@ t_stack	*fill_stack_values(int ac, char **av)
 
 	stack_a = NULL;
 	nb = 0;
-	i = 1;
-	while (i < ac)
+	i = 0;
+	while (av[i])
 	{
 		nb = ft_atoi(av[i]);
 		if (i == 1)

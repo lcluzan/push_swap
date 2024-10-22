@@ -6,7 +6,7 @@
 /*   By: lcluzan <lcluzan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 14:53:41 by lcluzan           #+#    #+#             */
-/*   Updated: 2024/10/17 13:08:39 by lcluzan          ###   ########.fr       */
+/*   Updated: 2024/10/22 14:15:57 by lcluzan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ static int	have_duplicates(char **av)
 	int	i;
 	int	j;
 
-	i = 1;
+	i = 0;
 	while (av[i])
 	{
 		j = 1;
@@ -106,7 +106,7 @@ int	is_correct_input(char **av)
 	int	nb_zeros;
 
 	nb_zeros = 0;
-	i = 1;
+	i = 0;
 	while (av[i])
 	{
 		if (!arg_is_number(av[i]))
