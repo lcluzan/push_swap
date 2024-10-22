@@ -6,7 +6,7 @@
 /*   By: lcluzan <lcluzan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 14:55:15 by lcluzan           #+#    #+#             */
-/*   Updated: 2024/10/13 15:14:22 by lcluzan          ###   ########.fr       */
+/*   Updated: 2024/10/22 14:09:07 by lcluzan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ typedef struct s_stack
 	struct s_stack	*next;
 }	t_stack;
 
-t_stack		*fill_stack_values(int ac, char **av);
+t_stack		*fill_stack_values(char **av);
 void		assign_index(t_stack *stack_a, int ac);
 
 int			is_sorted(t_stack *stack);
@@ -74,5 +74,7 @@ int			is_correct_input(char **av);
 int			is_digit(char c);
 int			is_sign(char c);
 int			nbstr_cmp(const char *s1, const char *s2);
+
+char		**ft_split(char const *s, char c);
 
 #endif
