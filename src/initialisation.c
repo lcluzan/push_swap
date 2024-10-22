@@ -6,7 +6,7 @@
 /*   By: lcluzan <lcluzan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 14:53:36 by lcluzan           #+#    #+#             */
-/*   Updated: 2024/10/22 14:16:19 by lcluzan          ###   ########.fr       */
+/*   Updated: 2024/10/22 15:27:50 by lcluzan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ t_stack	*fill_stack_values(char **av)
 	while (av[i])
 	{
 		nb = ft_atoi(av[i]);
-		if (i == 1)
+		if (!i)
 			stack_a = stack_new((int)nb);
 		else
 			stack_add_bottom(&stack_a, stack_new((int)nb));

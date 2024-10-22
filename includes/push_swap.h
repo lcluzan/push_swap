@@ -6,7 +6,7 @@
 /*   By: lcluzan <lcluzan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 14:55:15 by lcluzan           #+#    #+#             */
-/*   Updated: 2024/10/22 14:09:07 by lcluzan          ###   ########.fr       */
+/*   Updated: 2024/10/22 15:16:15 by lcluzan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,5 +76,6 @@ int			is_sign(char c);
 int			nbstr_cmp(const char *s1, const char *s2);
 
 char		**ft_split(char const *s, char c);
+void		free_split(char **str);
 
 #endif

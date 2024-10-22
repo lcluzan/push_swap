@@ -6,7 +6,7 @@
 /*   By: lcluzan <lcluzan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 14:53:45 by lcluzan           #+#    #+#             */
-/*   Updated: 2024/10/22 14:15:13 by lcluzan          ###   ########.fr       */
+/*   Updated: 2024/10/22 15:22:28 by lcluzan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,14 +43,17 @@ int	main(int ac, char **av)
 	t_stack	*stack_b;
 	int		stack_size;
 
+	++av;
 	if (ac < 2)
 		return (0);
 	if (ac == 2)
-		av = ft_split(av[1], ' ');
-	else
-		++av;
-	if (!is_correct_input(av))
+		av = ft_split(av[0], ' ');
+	if (!av[0] || !is_correct_input(av))
+	{
+		if (ac == 2)
+			free_split(av);
 		exit_error(NULL, NULL);
+	}
 	stack_b = NULL;
 	stack_a = fill_stack_values(av);
 	stack_size = get_stack_size(stack_a);
@@ -58,5 +61,7 @@ int	main(int ac, char **av)
 	push_swap(&stack_a, &stack_b, stack_size);
 	free_stack(&stack_a);
 	free_stack(&stack_b);
+	if (ac == 2)
+		free_split(av);
 	return (0);
 }

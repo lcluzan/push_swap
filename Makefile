@@ -1,6 +1,6 @@
 NAME	= push_swap
 CC		= cc
-CFLAGS	= -Wall -Werror -Wextra
+CFLAGS	= -Wall -Werror -Wextra -g3
 
 SRC_PATH = src/
 OBJ_PATH = obj/
