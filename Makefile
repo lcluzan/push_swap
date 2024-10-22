@@ -13,6 +13,7 @@ SRC		= main.c \
 		swap.c \
 		push.c \
 		rotate.c \
+		ft_split.c \
 		rev_rotate.c \
 		small_sort.c \
 		sort.c \
